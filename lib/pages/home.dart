@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
+import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:food_mobile/widgets/f_home_slider.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,8 +31,8 @@ class _HomeState extends State<Home> {
   var currentItem = 0;
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
+    final theme = FClass().getFTheme(context);
+    final size = FClass().getFSize(context);
     controller.addListener(() {
       setState(() {
         currentItem = controller.page.round();
@@ -122,55 +124,7 @@ class _HomeState extends State<Home> {
                       color: blueColor,
                     ),
                     alignment: Alignment.bottomCenter,
-                    child: Container(
-                      height: size.height*0.18,
-                      margin: EdgeInsets.fromLTRB(getProportionateScreenWidth(20),getProportionateScreenWidth(20),getProportionateScreenWidth(20),getProportionateScreenWidth(20),),
-                      padding: EdgeInsets.all(getProportionateScreenWidth(10)),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
-                        color: Colors.white,
-                      ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("S&L Diner", style: theme.textTheme.headline5),
-                            Text("189 Avenue Street Edinbugh", style: theme.textTheme.bodyText1.copyWith(color: Colors.grey)),
-                            Divider(thickness: 0.5, color: Colors.grey),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.star_rounded, color: Colors.yellow),
-                                    Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
-                                  ]
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.alarm_rounded, color: blueColor),
-                                    Text("15-25 mins", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
-                                  ]
-                                ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      height: 14,
-                                      width: 20,
-                                      margin: EdgeInsets.only(right: getProportionateScreenHeight(4)),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(2),
-                                        color: blueColor
-                                      ),
-                                    ),
-                                    Text("Free", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
-                                  ]
-                                ),
-                              ]
-                            )
-                          ]
-                        )
-                    )
+                    child: FHomeSlider(context)
                   ),
                   Container(
                     padding: EdgeInsets.only(top: getProportionateScreenWidth(15), bottom: getProportionateScreenWidth(5)),

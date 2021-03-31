@@ -3,7 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:food_mobile/widgets/f_elevated_button.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
 
 class Onboarding extends StatefulWidget {
@@ -28,8 +30,8 @@ class _OnboardingState extends State<Onboarding> {
   var currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final mediaQuery = MediaQuery.of(context);
+    final theme = FClass().getFTheme(context);
+    final size = FClass().getFSize(context);
     controller.addListener(() {
       setState(() {
         currentPage = controller.page.round();
@@ -43,7 +45,7 @@ class _OnboardingState extends State<Onboarding> {
           backgroundColor: Colors.white,
           body:  Column(
             children: [
-              _body(mediaQuery.size.width, controller, theme),
+              _body(size.width, controller, theme),
               _authButtons(theme),
             ],
           ),
@@ -122,23 +124,18 @@ class _OnboardingState extends State<Onboarding> {
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(22)),
-          child: ElevatedButton(
-            child: Text("Sign in"),
-            style: ElevatedButton.styleFrom(
-                primary: theme.primaryColor,
-                elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(getProportionateScreenWidth(15))),
-                padding: EdgeInsets.symmetric(vertical: 11),
-                textStyle: theme.textTheme.headline5),
-            onPressed: () {
-              Navigator.pushNamed(context, '/signIn');
-            },
+          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          child: FElevatedButton(
+              context,
+                  () {
+                Navigator.pushNamed(context, '/signIn');
+                },
+              "Sign in",
           ),
         ),
         Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(22)),
+          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           margin: EdgeInsets.only(top: getProportionateScreenWidth(5), bottom: getProportionateScreenWidth(10)),
           child: FlatButton(
             onPressed: () {

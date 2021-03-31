@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
+import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/top_rated.dart';
 
@@ -13,8 +14,8 @@ class ChooseDessert extends StatefulWidget {
 class _ChooseDessertState extends State<ChooseDessert> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
+    final theme = FClass().getFTheme(context);
+    final size = FClass().getFSize(context);
     SizeConfig().init(context);
     return DefaultTabController(
       length: 3,
@@ -36,10 +37,10 @@ class _ChooseDessertState extends State<ChooseDessert> {
           children: [
             TopRated(),
             Center(
-              child: Text("Top Rated"),
+              child: Text("Top Rated", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
             ),
             Center(
-              child: Text("Top Sales"),
+              child: Text("Top Sales", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
             ),
           ],
         ),

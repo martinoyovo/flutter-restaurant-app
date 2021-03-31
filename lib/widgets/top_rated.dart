@@ -13,7 +13,6 @@ class _TopRatedState extends State<TopRated> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
     SizeConfig().init(context);
     return ListView.builder(
         padding: EdgeInsets.only(left: getProportionateScreenWidth(20), top: getProportionateScreenWidth(10)),
@@ -42,7 +41,7 @@ class _TopRatedState extends State<TopRated> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
+                        Text("Ding Tea", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
                         SizedBox(width: getProportionateScreenWidth(50),),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -55,7 +54,7 @@ class _TopRatedState extends State<TopRated> {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
-                      child: Text("Piezss", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
+                      child: Text("189 Giang Vo", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
                     ),
                     Row(
                         children: [

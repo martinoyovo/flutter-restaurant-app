@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
+import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 
 class SearchInRestaurant extends StatefulWidget {
@@ -12,8 +13,8 @@ class SearchInRestaurant extends StatefulWidget {
 class _SearchInRestaurantState extends State<SearchInRestaurant> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
+    final theme = FClass().getFTheme(context);
+    final size = FClass().getFSize(context);
     SizeConfig().init(context);
     return Scaffold(
       appBar:  AppBar(
@@ -26,7 +27,7 @@ class _SearchInRestaurantState extends State<SearchInRestaurant> {
             ),
             child: TextField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(getProportionateScreenWidth(5)),
+                    contentPadding: EdgeInsets.fromLTRB(getProportionateScreenWidth(5),getProportionateScreenWidth(12),getProportionateScreenWidth(5),getProportionateScreenWidth(5),),
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.search_rounded),
                     hintText: "Search",
@@ -64,7 +65,7 @@ class _SearchInRestaurantState extends State<SearchInRestaurant> {
                           Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
-                            child: Text("Piezss", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
+                            child: Text("Piezss", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey.shade600),),
                           ),
                           Text("D150", style: theme.textTheme.bodyText1.copyWith(color: primaryColor),),
                         ],
