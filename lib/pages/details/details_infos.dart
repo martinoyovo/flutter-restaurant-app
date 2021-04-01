@@ -16,7 +16,8 @@ class DetailsInfos extends StatefulWidget {
   _DetailsInfosState createState() => _DetailsInfosState();
 }
 
-class _DetailsInfosState extends State<DetailsInfos> with SingleTickerProviderStateMixin {
+class _DetailsInfosState extends State<DetailsInfos>
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
@@ -29,55 +30,62 @@ class _DetailsInfosState extends State<DetailsInfos> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     final theme = FClass().getFTheme(context);
     final size = FClass().getFSize(context);
-    return DetailsWrapper(detailsWidget: Container(
-      padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(20)),
-      alignment: Alignment.topCenter,
-      height: size.height*0.45,
-      decoration: BoxDecoration(
+    return DetailsWrapper(
+        detailsWidget: Container(
+          padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(20)),
+          alignment: Alignment.topCenter,
+          height: size.height * 0.45,
+          decoration: BoxDecoration(
           color: theme.primaryColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(getProportionateScreenWidth(30)),
             bottomRight: Radius.circular(getProportionateScreenWidth(30)),
-          )
-      ),
-      child: Container(
-        padding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(icon: Icon(Icons.arrow_back, color: Colors.white), onPressed: () {
-              Navigator.pop(context);
-            }),
-            Row(
+          )),
+          child: Container(
+            padding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                  child: Container(
-                    margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
-                    height: getProportionateScreenWidth(36),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white
-                    ),
-                    padding: EdgeInsets.all(getProportionateScreenWidth(6)),
-                    alignment: Alignment.center,
-                    child: Align(
+                IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+                Row(
+                  children: [
+                    InkWell(
+                      child: Container(
+                        margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
+                        height: getProportionateScreenWidth(36),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.white),
+                        padding: EdgeInsets.all(getProportionateScreenWidth(6)),
                         alignment: Alignment.center,
-                        child: Icon(Icons.favorite, color: primaryColor,)),
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.favorite,
+                              color: primaryColor,
+                            )),
                   ),
                 ),
                 InkWell(
                   child: Container(
-                    margin: EdgeInsets.only(right: getProportionateScreenWidth(15)),
+                    margin:
+                        EdgeInsets.only(right: getProportionateScreenWidth(15)),
                     height: getProportionateScreenWidth(36),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                     padding: EdgeInsets.all(getProportionateScreenWidth(6)),
                     alignment: Alignment.center,
                     child: Align(
                         alignment: Alignment.center,
-                        child: Icon(Icons.search_rounded, color: Colors.grey.shade600,)),
+                        child: Icon(
+                          Icons.search_rounded,
+                          color: Colors.grey.shade600,
+                        )),
                   ),
                 ),
               ],

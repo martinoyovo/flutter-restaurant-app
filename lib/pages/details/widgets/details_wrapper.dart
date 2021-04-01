@@ -3,6 +3,7 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/pages/details/widgets/delivery_tab.dart';
+import 'package:food_mobile/pages/details/widgets/review_tab.dart';
 import 'package:food_mobile/pages/details/widgets/info_tab.dart';
 import 'package:food_mobile/search/search_items.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
@@ -73,9 +74,7 @@ class _DetailsWrapperState extends State<DetailsWrapper> with SingleTickerProvid
                     child: TabBarView(
                       children: [
                         DeliveryTab(),
-                        Center(
-                          child: Text("Review", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
-                        ),
+                        ReviewTab(),
                         InfoTab()
                       ],
                       controller: _tabController,
