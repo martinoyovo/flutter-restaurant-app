@@ -274,7 +274,6 @@ class _ReviewTabState extends State<ReviewTab> {
                                       ],
                                     ),
                                   ),
-                                  Text("D150", style: theme.textTheme.bodyText1.copyWith(color: primaryColor),),
                                 ],
                               ),
                             ],
