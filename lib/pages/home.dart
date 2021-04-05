@@ -169,7 +169,52 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Your recent visits", style: theme.textTheme.headline5,),
-                        Text("Show all", style: theme.textTheme.subtitle2)
+                        Text("Show all", style: theme.textTheme.subtitle1.copyWidth(color: primaryColor))
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: getProportionateScreenWidth(110),
+                            width: getProportionateScreenWidth(110),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(getProportionateScreenWidth(10)),
+                              color: blueColor,
+                            ),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenWidth(10)
+                          ),
+                          Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
+                          SizedBox(
+                              height: getProportionateScreenWidth(7)
+                          ),
+                          Text("lkdjlkjflk", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
+                          SizedBox(
+                              height: getProportionateScreenWidth(7)
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(Icons.star_rounded, color: Colors.yellow),
+                                Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                              ]
+                          ),
+                        ],
+                      )
+                    ],
+                  ),Container(
+                    padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Your recent visits", style: theme.textTheme.headline5,),
+                        Text("Show all", style: theme.textTheme.subtitle1.copyWidth(color: primaryColor))
                       ],
                     ),
                   ),

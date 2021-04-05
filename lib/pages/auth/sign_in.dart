@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
               children: [
                 Text("Don't you have an account?", style: theme.textTheme.subtitle1,),
                 InkWell(
-                  child: Text(" Sign up now!", style: theme.textTheme.subtitle2,),
+                  child: Text(" Sign up now!", style: theme.textTheme.subtitle1.copyWith(color: primaryColor),),
                   onTap: () {
                     Navigator.pushNamed(context, '/signUp');
                   },

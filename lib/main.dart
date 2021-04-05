@@ -10,7 +10,10 @@ import 'package:food_mobile/pages/auth/confirm_password.dart';
 import 'package:food_mobile/pages/auth/sign_in.dart';
 import 'package:food_mobile/pages/auth/sign_up.dart';
 import 'package:food_mobile/pages/choose_dessert.dart';
+import 'package:food_mobile/pages/details/details_add_promotion_code.dart';
+import 'package:food_mobile/pages/details/details_change_payment.dart';
 import 'package:food_mobile/pages/details/details_infos.dart';
+import 'package:food_mobile/pages/details/details_my_order.dart';
 import 'package:food_mobile/pages/details/details_search_in_restaurant.dart';
 import 'package:food_mobile/pages/home.dart';
 import 'package:food_mobile/pages/onboarding.dart';
@@ -43,9 +46,9 @@ class MyApp extends StatelessWidget {
             headline4: GoogleFonts.openSans(fontSize: 18, color: primaryColor),
             headline3: GoogleFonts.openSans(fontSize: 16, color: Colors.black),
             bodyText1: GoogleFonts.openSans(fontSize: 16),
-            bodyText2: GoogleFonts.openSans(fontSize: 16, color: Colors.white),
+            bodyText2: GoogleFonts.openSans(fontSize: 16),
             subtitle1: GoogleFonts.openSans(fontSize: 13),
-            subtitle2: GoogleFonts.openSans(fontSize: 13, color: primaryColor),
+            subtitle2: GoogleFonts.openSans(fontSize: 14),
           ),
           appBarTheme: AppBarTheme(
             elevation: 0,
@@ -65,7 +68,7 @@ class MyApp extends StatelessWidget {
           accentColor: primaryColor
         ),
         debugShowCheckedModeBanner: false,
-          initialRoute: '/detailsInfos',
+          initialRoute: '/chooseDessert',
           routes: {
             '/': (context) => Onboarding(),
             "/signIn": (context) => SignIn(),
@@ -81,6 +84,9 @@ class MyApp extends StatelessWidget {
             "/editAddress": (context) => AddressEdit(),
             "/editAddress2": (context) => AddressEdit2(),
             "/detailsInfos": (context) => DetailsInfos(),
+            "/detailsMyOrder": (context) => DetailsMyOrder(),
+            "/detailsChangePayment": (context) => DetailsChangePayment(),
+            "/detailsAddPromotionCode": (context) => DetailsAddPromotionCode(),
           },
       ),
     );

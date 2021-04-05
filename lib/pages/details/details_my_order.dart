@@ -4,7 +4,9 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
+import 'package:food_mobile/widgets/f_divider.dart';
 import 'package:food_mobile/widgets/f_elevated_button.dart';
+import 'package:food_mobile/widgets/f_modal_dialog.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
 
 class DetailsMyOrder extends StatefulWidget {
@@ -18,7 +20,6 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
   @override
   Widget build(BuildContext context) {
     final theme = FClass().getFTheme(context);
-    final size = FClass().getFSize(context);
     SizeConfig().init(context);
     return Scaffold(
       appBar: FAppBar("Confirm Order", context),
@@ -185,17 +186,21 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
             bottom: getProportionateScreenWidth(10),
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(20),
-            child: FElevatedButton(context, () {}, "Submit - \$160"),
+            child: FElevatedButton(context, () {
+              showModalBottomSheet(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(getProportionateScreenWidth(20)),
+                    topRight: Radius.circular(getProportionateScreenWidth(20)),
+                  )
+                ),
+                context: context,
+                builder: (context) => fModalDialog(context)
+              );
+            }, "Submit - \$160"),
           )
         ],
       ),
     );
   }
-  Widget FCustomDivider() => Padding(
-    padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
-    child: Divider(
-      thickness: 7,
-      color: Colors.grey.shade200,
-    ),
-  );
 }
