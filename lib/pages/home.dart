@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                           children: [
                             Icon(Icons.location_on_outlined, color: Colors.white),
                             SizedBox(width: getProportionateScreenWidth(12)),
-                            Text("Avenue street", style: theme.textTheme.bodyText2,),
+                            Text("Avenue street", style: theme.textTheme.bodyText2.copyWith(color: Colors.white),),
                             SizedBox(width: getProportionateScreenWidth(17)),
                             Icon(Icons.edit_outlined, color: Colors.white),
                           ],
@@ -107,154 +107,178 @@ class _HomeState extends State<Home> {
               SizedBox()
             ],
           ),
-          Positioned(
-            top: getProportionateScreenHeight(230),
-            left: 0,
-            right: 0,
-            child: Expanded(
-              child: ListView(
-                physics: BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-                children: [
-                  Container(
-                    height: size.height*0.43,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
-                      color: blueColor,
+          Stack(
+            children: [
+              Positioned(
+                top: size.height*0.28,
+                left: getProportionateScreenWidth(20),
+                right: getProportionateScreenWidth(20),
+                child: Column(
+                  children: [
+                    Container(
+                        height: size.height*0.43,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
+                          color: blueColor,
+                        ),
+                        alignment: Alignment.bottomCenter,
+                        child: FHomeSlider(context)
                     ),
-                    alignment: Alignment.bottomCenter,
-                    child: FHomeSlider(context)
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: getProportionateScreenWidth(15), bottom: getProportionateScreenWidth(5)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        roundedCategories("assets/icons/seafood.svg"),
-                        roundedCategories("assets/icons/american.svg"),
-                        roundedCategories("assets/icons/burgers.svg"),
-                        roundedCategories("assets/icons/dessert.svg"),
-                      ],
+                    Container(
+                      padding: EdgeInsets.only(top: getProportionateScreenWidth(15), bottom: getProportionateScreenWidth(5)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          roundedCategories("assets/icons/seafood.svg"),
+                          roundedCategories("assets/icons/american.svg"),
+                          roundedCategories("assets/icons/burgers.svg"),
+                          roundedCategories("assets/icons/dessert.svg"),
+                        ],
+                      ),
                     ),
-                  ),
-                  /*Container(
-                    width: 2*size.width/3,
-                    height: getProportionateScreenWidth(100),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
-                      color: blueColor
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+                    /*Container(
+                      width: 2*size.width/3,
+                      height: getProportionateScreenWidth(100),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
+                          color: blueColor
+                      ),
+                      child: Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
                           color: Colors.black.withOpacity(0.1),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("10% of all food", style: theme.textTheme.headline5.copyWith(color: Colors.white),),
+                            SizedBox(height: getProportionateScreenWidth(10),),
+                            Text("18/3 - 22/3", style: theme.textTheme.subtitle1.copyWith(color: Colors.white),)
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("10% of all food", style: theme.textTheme.headline5.copyWith(color: Colors.white),),
-                          SizedBox(height: getProportionateScreenWidth(10),),
-                          Text("18/3 - 22/3", style: theme.textTheme.subtitle1.copyWith(color: Colors.white),)
-                        ],
-                      ),
-                    ),
-                  )*/
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    ),*/
+                  ],
+                ),
+              ),
+              /*Positioned(
+                  top: size.height*0.72,
+                  left: 0,
+                  right: 0,
+                  child: Expanded(
+                    child: ListView(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
                       children: [
-                        Text("Your recent visits", style: theme.textTheme.headline5,),
-                        Text("Show all", style: theme.textTheme.subtitle1.copyWidth(color: primaryColor))
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: getProportionateScreenWidth(110),
-                            width: getProportionateScreenWidth(110),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(getProportionateScreenWidth(10)),
-                              color: blueColor,
-                            ),
+                        Container(
+                          padding: EdgeInsets.only(top: getProportionateScreenWidth(15), bottom: getProportionateScreenWidth(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              roundedCategories("assets/icons/seafood.svg"),
+                              roundedCategories("assets/icons/american.svg"),
+                              roundedCategories("assets/icons/burgers.svg"),
+                              roundedCategories("assets/icons/dessert.svg"),
+                            ],
                           ),
-                          SizedBox(
-                            height: getProportionateScreenWidth(10)
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Your recent visits", style: theme.textTheme.headline5,),
+                              Text("Show all", style: theme.textTheme.subtitle1.copyWith(color: primaryColor))
+                            ],
                           ),
-                          Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
-                          SizedBox(
-                              height: getProportionateScreenWidth(7)
-                          ),
-                          Text("lkdjlkjflk", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
-                          SizedBox(
-                              height: getProportionateScreenWidth(7)
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                        ),
+                        Row(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.star_rounded, color: Colors.yellow),
-                                Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
-                              ]
+                                Container(
+                                  height: getProportionateScreenWidth(110),
+                                  width: getProportionateScreenWidth(110),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(getProportionateScreenWidth(10)),
+                                    color: blueColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(10)
+                                ),
+                                Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(7)
+                                ),
+                                Text("lkdjlkjflk", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(7)
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.star_rounded, color: Colors.yellow),
+                                      Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                                    ]
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Your recent visits", style: theme.textTheme.headline5,),
+                              Text("Show all", style: theme.textTheme.subtitle1.copyWith(color: primaryColor))
+                            ],
                           ),
-                        ],
-                      )
-                    ],
-                  ),Container(
-                    padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Your recent visits", style: theme.textTheme.headline5,),
-                        Text("Show all", style: theme.textTheme.subtitle1.copyWidth(color: primaryColor))
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: getProportionateScreenWidth(110),
-                            width: getProportionateScreenWidth(110),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(getProportionateScreenWidth(10)),
-                              color: blueColor,
-                            ),
-                          ),
-                          SizedBox(
-                            height: getProportionateScreenWidth(10)
-                          ),
-                          Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
-                          SizedBox(
-                              height: getProportionateScreenWidth(7)
-                          ),
-                          Text("lkdjlkjflk", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
-                          SizedBox(
-                              height: getProportionateScreenWidth(7)
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                        ),
+                        Row(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.star_rounded, color: Colors.yellow),
-                                Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
-                              ]
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  /*Row(
+                                Container(
+                                  height: getProportionateScreenWidth(110),
+                                  width: getProportionateScreenWidth(110),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(getProportionateScreenWidth(10)),
+                                    color: blueColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(10)
+                                ),
+                                Text("Piezss", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(7)
+                                ),
+                                Text("lkdjlkjflk", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey),),
+                                SizedBox(
+                                    height: getProportionateScreenWidth(7)
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.star_rounded, color: Colors.yellow),
+                                      Text("4.0 (230)", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                                    ]
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        /*Row(
                     children: [
                       Container(
                         height: getProportionateScreenWidth(110),
@@ -316,12 +340,14 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   )*/
-                ],
-              ),
-            )/*Expanded(
+                      ],
+                    ),
+                  )/*Expanded(
               child: _platSlider(size.height, controller, theme),
             )*/
-          ),
+              ),*/
+            ],
+          )
         ],
       )
     );
