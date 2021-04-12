@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/widgets/f_modal_dialog.dart';
+import 'package:food_mobile/widgets/f_dialogs.dart';
 
 class FOngoingTracking extends StatefulWidget {
   FOngoingTracking({Key key}) : super(key: key);
@@ -133,7 +133,7 @@ Widget trackHeaderPrimary(context) {
                           )
                       ),
                       context: context,
-                      builder: (context) => fModalDialog(context)
+                      builder: (context) => fSuccessDialog(context)
                   );
                 }),
           ],
