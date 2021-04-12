@@ -6,7 +6,7 @@ import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
 import 'package:food_mobile/widgets/f_divider.dart';
 import 'package:food_mobile/widgets/f_elevated_button.dart';
-import 'package:food_mobile/widgets/f_modal_dialog.dart';
+import 'package:food_mobile/widgets/f_dialogs.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
 
 class DetailsMyOrder extends StatefulWidget {
@@ -195,7 +195,7 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
                   )
                 ),
                 context: context,
-                builder: (context) => fModalDialog(context)
+                builder: (context) => fSuccessDialog(context)
               );
             }, "Submit - \$160"),
           )
