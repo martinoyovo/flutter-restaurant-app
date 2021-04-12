@@ -26,6 +26,7 @@ class Root extends StatelessWidget {
           FElevatedButton(context, () {Navigator.pushNamed(context, "/detailsMyOrder");}, "Details My Order"),
           FElevatedButton(context, () {Navigator.pushNamed(context, "/detailsAddPromotionCode");}, "Details Add Promotion Code"),
           FElevatedButton(context, () {Navigator.pushNamed(context, "/search");}, "Search"),
+          FElevatedButton(context, () {Navigator.pushNamed(context, "/driver");}, "Driver Side"),
         ]
       ),
     );
