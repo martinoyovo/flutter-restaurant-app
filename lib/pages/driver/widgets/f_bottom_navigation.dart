@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/pages/driver/order/tracking.dart';
+import 'package:food_mobile/pages/profile/main_screen.dart';
 import 'package:food_mobile/pages/saved/main_screen.dart';
 
 
@@ -20,7 +21,7 @@ class _FBottomNavigationBarState extends State<FBottomNavigationBar> {
     Text("Home"),
     Tracking(),
     MainScreen(),
-    Text("Home"),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
