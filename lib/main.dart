@@ -21,6 +21,8 @@ import 'package:food_mobile/pages/driver/order/tracking.dart';
 import 'package:food_mobile/pages/driver/widgets/f_bottom_navigation.dart';
 import 'package:food_mobile/pages/home.dart';
 import 'package:food_mobile/pages/onboarding.dart';
+import 'package:food_mobile/pages/profile/edit_profile.dart';
+import 'package:food_mobile/pages/profile/main_screen.dart';
 import 'package:food_mobile/pages/saved/see_all.dart';
 import 'package:food_mobile/pages/search/search_in_restaurant.dart';
 import 'package:food_mobile/root.dart';
@@ -110,8 +112,10 @@ class MyApp extends StatelessWidget {
             "/tracking": (context) => Tracking(),
             "/driver": (context) => FBottomNavigationBar(),
 
-
             "/seeAll": (context) => SeeAll(),
+
+            "/profileScreen": (context) => ProfileScreen(),
+            "/editProfile": (context) => EditProfile(),
           },
       ),
     );
