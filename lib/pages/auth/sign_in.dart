@@ -41,9 +41,7 @@ class _SignInState extends State<SignIn> {
               children: [
                 InkWell(
                   child: Text("Forgot password?", style: theme.textTheme.bodyText1,),
-                  onTap: () {
-
-                  },
+                  onTap: () => Navigator.pushNamed(context, "/confirmPassword"),
                 ),
               ],
             ),
@@ -83,7 +81,7 @@ class _SignInState extends State<SignIn> {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(getProportionateScreenWidth(15))),
                   padding: EdgeInsets.symmetric(vertical: 11),
                   textStyle: theme.textTheme.headline5),
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, "/nav"),
             ),
           ),
           Container(
@@ -117,9 +115,10 @@ class _SignInState extends State<SignIn> {
               onPressed: () {},
               label: Text("Sign in with Google", style: theme.textTheme.headline5),
               style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.white,
                   primary: blueColor,
                   elevation: 0,
-                  side: BorderSide(color: Colors.grey, width: 1.5),
+                  side: BorderSide(color: Colors.grey, width: 1),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(getProportionateScreenWidth(15))),
                   padding: EdgeInsets.symmetric(vertical: 11),
                   textStyle: theme.textTheme.headline5),

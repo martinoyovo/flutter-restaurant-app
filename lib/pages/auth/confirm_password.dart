@@ -8,7 +8,7 @@ class ConfirmPassword extends StatefulWidget {
 }
 
 class _ConfirmPasswordState extends State<ConfirmPassword> {
-  String emailString = "Emai";
+  String emailString = "Email";
   String confirmationString = "Please enter your email address. You will receive a link to create a new password via email";
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                     padding: EdgeInsets.symmetric(vertical: 11),
                     textStyle: theme.textTheme.headline5),
                 onPressed: () {
-                  Navigator.pushNamed(context, "/confirmPassword");
+                  Navigator.pop(context, "/confirmPassword");
                 },
               ),
             ),
