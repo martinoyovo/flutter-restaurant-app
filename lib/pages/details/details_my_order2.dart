@@ -4,6 +4,7 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
+import 'package:food_mobile/widgets/f_dialogs.dart';
 import 'package:food_mobile/widgets/f_divider.dart';
 import 'package:food_mobile/widgets/f_elevated_button.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
@@ -196,7 +197,18 @@ class _DetailsMyOrder2State extends State<DetailsMyOrder2> {
             bottom: getProportionateScreenWidth(10),
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(20),
-            child: FElevatedButton(context, () {}, "Submit - \$160"),
+            child: FElevatedButton(context, () {
+              showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(getProportionateScreenWidth(20)),
+                        topRight: Radius.circular(getProportionateScreenWidth(20)),
+                      )
+                  ),
+                  context: context,
+                  builder: (context) => fSuccessDialog(context)
+              );
+            }, "Submit - \$160"),
           )
         ],
       ),
