@@ -122,23 +122,26 @@ class _OrderMessageState extends State<OrderMessage> {
                   ),
                 color: Colors.white
               ),
-              child: TextField(
-                style: theme.textTheme.bodyText2.copyWith(color: Colors.black87),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(0),
-                  prefix: Container(
-                    margin: EdgeInsets.only(right: getProportionateScreenWidth(10)),
-                    child: InkWell(
-                      child: Icon(CupertinoIcons.photo, color: Colors.black87, size: getProportionateScreenWidth(25),),
+              child: ListTile(
+                leading: Container(
+                  child: InkWell(
+                    child: Icon(CupertinoIcons.photo, color: Colors.black87, size: getProportionateScreenWidth(25),),
+                  ),
+                ),
+                title: Flexible(
+                  child: TextField(
+                    style: theme.textTheme.bodyText2.copyWith(color: Colors.black87),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(0),
+                      hintText: "Enter your message...",
+                      hintStyle: theme.textTheme.bodyText2.copyWith(color: Colors.black87),
+                      border: InputBorder.none,
                     ),
                   ),
-                  hintText: "Enter your message...",
-                  hintStyle: theme.textTheme.bodyText2.copyWith(color: Colors.black87),
-                  border: InputBorder.none,
-                  suffix: InkWell(
-                    child: Text('Send', style: theme.textTheme.bodyText2.copyWith(color: primaryColor),)
-                  )
                 ),
+                trailing: InkWell(
+                  child: Text('Send', style: theme.textTheme.bodyText2.copyWith(color: primaryColor),)
+                )
               ),
             ),
           )
