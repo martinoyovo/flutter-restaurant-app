@@ -47,21 +47,24 @@ class _FOngoingTrackingState extends State<FOngoingTracking> {
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(7)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Food | S&L Diner", style: theme.textTheme.subtitle2.copyWith(color: Colors.black),),
-                          Text("\$150 - 1 item - Cash", style: theme.textTheme.subtitle1.copyWith(color: Colors.black),),
-                          Text("Michael - 0356634221", style: theme.textTheme.subtitle1.copyWith(color: Colors.black),),
-                        ],
-                      ),
-                      Icon(CupertinoIcons.chevron_forward)
-                    ],
+                  child: InkWell(
+                    onTap: () => Navigator.pushNamed(context, "/trackOrder"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Food | S&L Diner", style: theme.textTheme.subtitle2.copyWith(color: Colors.black),),
+                            Text("\$150 - 1 item - Cash", style: theme.textTheme.subtitle1.copyWith(color: Colors.black),),
+                            Text("Michael - 0356634221", style: theme.textTheme.subtitle1.copyWith(color: Colors.black),),
+                          ],
+                        ),
+                        Icon(CupertinoIcons.chevron_forward)
+                      ],
+                    ),
                   ),
                 ),
                 trackHeaderPrimary(context)
@@ -125,16 +128,6 @@ Widget trackHeaderPrimary(context) {
                       color: Colors.white,
                     )),
                 onTap: () {
-                  showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(getProportionateScreenWidth(20)),
-                            topRight: Radius.circular(getProportionateScreenWidth(20)),
-                          )
-                      ),
-                      context: context,
-                      builder: (context) => fSuccessDialog(context)
-                  );
                 }),
           ],
         ),
