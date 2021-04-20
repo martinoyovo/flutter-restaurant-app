@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:food_mobile/widgets/f_dialogs.dart';
 
 class SearchInRestaurant extends StatefulWidget {
   SearchInRestaurant({Key key}) : super(key: key);
@@ -40,7 +41,7 @@ class _SearchInRestaurantState extends State<SearchInRestaurant> {
           padding: EdgeInsets.only(left: getProportionateScreenWidth(20), top: getProportionateScreenWidth(10), right: getProportionateScreenWidth(10)),
           physics: BouncingScrollPhysics(),
           itemCount:  10,
-          itemBuilder: (index, context) {
+          itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(7)),
               child: Row(
@@ -76,9 +77,18 @@ class _SearchInRestaurantState extends State<SearchInRestaurant> {
                         child: IconButton(
                           icon: Icon(Icons.add_circle_rounded),
                           color: primaryColor,
-                          iconSize: getProportionateScreenWidth(40),
+                          iconSize: getProportionateScreenWidth(35),
                           onPressed: () {
-
+                            showModalBottomSheet(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(getProportionateScreenWidth(20)),
+                                      topRight: Radius.circular(getProportionateScreenWidth(20)),
+                                    )
+                                ),
+                              context: context,
+                              builder: (context) => fOrderDialog(context)
+                            );
                           },
                         ),
                       )
