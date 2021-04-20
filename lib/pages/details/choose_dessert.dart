@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:food_mobile/pages/details/details_infos.dart';
 import 'package:food_mobile/widgets/top_rated.dart';
 
 class ChooseDessert extends StatefulWidget {
@@ -35,7 +36,10 @@ class _ChooseDessertState extends State<ChooseDessert> {
         ),
         body: TabBarView(
           children: [
-            TopRated(),
+            TopRated(callback: () {
+              print("coool");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsInfos()));
+            },),
             Center(
               child: Text("Top Rated", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
             ),
