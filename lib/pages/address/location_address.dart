@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
@@ -50,7 +51,9 @@ class _LocationAddressState extends State<LocationAddress> {
     final currentPosition = FClass().getFPosition(context);
     return Scaffold(
       appBar: FAppBar("", context),
-      body: currentPosition ==null ? Center(child: CircularProgressIndicator()):Stack(
+      body: /*currentPosition ==null ?
+      Center(child: CircularProgressIndicator()):
+      Stack(
         children: [
           GoogleMap(
             onMapCreated: _onMapCreated,
@@ -127,7 +130,74 @@ class _LocationAddressState extends State<LocationAddress> {
             },
           ),
         ]
-      ),
+      ),*/
+      GestureDetector(
+        child: Container(
+          color: primaryColor,
+        ),
+        onTap: () {
+          showModalBottomSheet(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              context: context,
+              builder: (_) {
+                return Container(
+                  height: size.height*0.4,
+                    padding: EdgeInsets.all(getProportionateScreenWidth(22)),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(getProportionateScreenWidth(15)),
+                          topRight: Radius.circular(getProportionateScreenWidth(15)),
+                        )
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                            margin: EdgeInsets.only(bottom: getProportionateScreenWidth(12)),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+                              color: Colors.grey.shade200,
+                            ),
+                            child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
+                                    border: InputBorder.none,
+                                    prefixIcon: Icon(Icons.search_rounded),
+                                    hintText: "123 Avenue Street",
+                                    hintStyle: theme.textTheme.bodyText1
+                                )
+                            )
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(bottom: getProportionateScreenWidth(12)),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+                              color: Colors.grey.shade200,
+                            ),
+                            child: TextField(
+                                enabled: false,
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
+                                    border: InputBorder.none,
+                                    prefixIcon: Icon(Icons.add_rounded),
+                                    hintText: "Add Details",
+                                    hintStyle: theme.textTheme.bodyText1
+                                )
+                            )
+                        ),
+                        FElevatedButton(
+                            context, () {
+                              Navigator.pushNamed(context, "/editAddress");
+                        }, "Confirm"),
+                      ],
+                    )
+                );
+              });
+        },
+      )
     );
   }
 }
