@@ -142,7 +142,7 @@ class _AddressEdit2State extends State<AddressEdit2> {
               ),
               SizedBox(height: getProportionateScreenWidth(30),),
               FElevatedButton(context, () {
-                Navigator.pushNamed(context, "/locationAddress");
+                Navigator.pop(context, "/locationAddress");
               }, "Confirm"),
             ],
           ),
