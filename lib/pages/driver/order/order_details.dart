@@ -192,7 +192,13 @@ class _OrderDetailsState extends State<OrderDetails> {
                         ),
                         onPressed: () {
                           showDialog(context: context, builder: (context) {
-                            return RateDriver();
+                            return Container(
+                              color: Colors.transparent,
+                              margin: EdgeInsets.symmetric(
+                                vertical: getProportionateScreenWidth(50),
+                                horizontal: getProportionateScreenWidth(20),
+                              ),
+                                child: RateDriver());
                           });
                         },
                         child: Text("Rate us", style: theme.textTheme.headline5
