@@ -3,6 +3,7 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_app_bar.dart';
+import 'package:geolocator/geolocator.dart';
 
 class TrackOrder extends StatefulWidget {
   TrackOrder({Key key}) : super(key: key);
@@ -12,6 +13,7 @@ class TrackOrder extends StatefulWidget {
 }
 
 class _TrackOrderState extends State<TrackOrder> {
+  bool _isChecked = false;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -39,7 +41,7 @@ class _TrackOrderState extends State<TrackOrder> {
         decoration: BoxDecoration(
           borderRadius:
           BorderRadius.circular(getProportionateScreenWidth(5)),
-          color: Colors.grey.shade200,
+          color: Colors.grey.shade300,
         ),
         child: FittedBox(
           child: Row(
@@ -89,7 +91,9 @@ class _TrackOrderState extends State<TrackOrder> {
                             Icons.messenger,
                             color: Colors.white,
                           )),
-                      onTap: () {}),
+                      onTap: () {
+                        Navigator.pushNamed(context, "/orderMessage");
+                      }),
                 ],
               ),
             ],
@@ -99,83 +103,56 @@ class _TrackOrderState extends State<TrackOrder> {
   Widget trackStatus() {
     final theme = FClass().getFTheme(context);
     final size = FClass().getFSize(context);
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: getProportionateScreenWidth(13), left: getProportionateScreenWidth(11)),
+          width: getProportionateScreenWidth(2),
+          height: size.height*0.46,
+          decoration: BoxDecoration(
+              color: Colors.grey.shade400
+          ),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            trackItem("Order Confirmed", "Your Order has been received", context),
+            trackItem("Order Prepared", "Your Order has been prepared", context),
+            trackItem("Order In Progress", "Your food is on the way to you", context),
+            trackItem("Delivered", "Wish you have an interesting experience", context),
+            trackItem("Rate Us", "Help us improve our service", context)
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget trackItem(title, subtitle, context) {
+    final theme = FClass().getFTheme(context);
     return Container(
-      margin: EdgeInsets.only(left: getProportionateScreenWidth(10)),
+      margin: EdgeInsets.only(bottom: getProportionateScreenWidth(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
+          GestureDetector(
+            child: Icon(_isChecked?Icons.check_box_rounded:Icons.check_box_outline_blank_rounded, color: blueColor,),
+            onTap: () {
+              setState(() {
+                _isChecked =!_isChecked;
+              });
+            },
+          ),
+          SizedBox(width: getProportionateScreenWidth(10),),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                margin: EdgeInsets.only(top: getProportionateScreenWidth(10)),
-                width: getProportionateScreenWidth(2),
-                height: size.height*0.48,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300
-                ),
-              ),
-              Positioned(
-                top: 0,
-                left: 10,
-                right: getProportionateScreenWidth(60),
-                child: Icon(Icons.check_box_rounded, color: primaryColor,),
-              )
+              Text(title),
+              Text(subtitle, style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
             ],
           ),
-          SizedBox(width: getProportionateScreenWidth(50),),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Order Confirmed"),
-                    Text("Your Order has been received", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenWidth(30),),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Order Prepared"),
-                    Text("Your Order has been prepared", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenWidth(30),),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Order In Progress"),
-                    Text("Your food is on the way to you", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenWidth(30),),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Delivered"),
-                    Text("Wish you have an interesting experience", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenWidth(30),),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Rate Us"),
-                    Text("Help us improve our service", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade600),),
-                  ],
-                ),
-              ],
-            )
-          )
         ],
       ),
     );
