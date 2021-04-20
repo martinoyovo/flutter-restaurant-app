@@ -41,21 +41,41 @@ class _DetailsInfosState extends State<DetailsInfos>
             bottomLeft: Radius.circular(getProportionateScreenWidth(30)),
             bottomRight: Radius.circular(getProportionateScreenWidth(30)),
           )),
-          child: Container(
-            padding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-                Row(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: getProportionateScreenWidth(13)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    IconButton(
+                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        }),
+                    Row(
+                      children: [
+                        InkWell(
+                          child: Container(
+                            margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
+                            height: getProportionateScreenWidth(36),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white),
+                            padding: EdgeInsets.all(getProportionateScreenWidth(6)),
+                            alignment: Alignment.center,
+                            child: Align(
+                                alignment: Alignment.center,
+                                child: Icon(
+                                  Icons.favorite,
+                                  color: primaryColor,
+                                )),
+                      ),
+                    ),
                     InkWell(
                       child: Container(
-                        margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
+                        margin:
+                            EdgeInsets.only(right: getProportionateScreenWidth(15)),
                         height: getProportionateScreenWidth(36),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
@@ -65,34 +85,35 @@ class _DetailsInfosState extends State<DetailsInfos>
                         child: Align(
                             alignment: Alignment.center,
                             child: Icon(
-                              Icons.favorite,
-                              color: primaryColor,
+                              Icons.search_rounded,
+                              color: Colors.grey.shade600,
                             )),
-                  ),
-                ),
-                InkWell(
-                  child: Container(
-                    margin:
-                        EdgeInsets.only(right: getProportionateScreenWidth(15)),
-                    height: getProportionateScreenWidth(36),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white),
-                    padding: EdgeInsets.all(getProportionateScreenWidth(6)),
-                    alignment: Alignment.center,
-                    child: Align(
-                        alignment: Alignment.center,
-                        child: Icon(
-                          Icons.search_rounded,
-                          color: Colors.grey.shade600,
-                        )),
-                  ),
-                ),
+                      ),
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
         ),
       ),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10), horizontal: getProportionateScreenWidth(20)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+                    color: Colors.white,
+                  ),
+                  child: TextField(
+                    onTap: () => Navigator.pushNamed(context, "/searchInRestaurant"),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(getProportionateScreenWidth(10)),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.search_rounded),
+                          hintText: "Search",
+                          hintStyle: theme.textTheme.bodyText1
+                      )
+                  )
+              ),
+            ],
+          ),
     ));
   }
 }
