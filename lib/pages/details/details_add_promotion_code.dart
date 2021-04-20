@@ -74,15 +74,18 @@ class _DetailsAddPromotionCodeState extends State<DetailsAddPromotionCode> {
               ],
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
-              color: Colors.grey.shade200
-            ),
-            child: ListTile(
-              leading: Icon(Icons.map, color: Colors.grey),
-              title: Text("Code \$10 off on shipping fee", style: theme.textTheme.bodyText2,),
-              subtitle: Text("10/03/2020", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade700),),
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, "/detailsMyOrder2"),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
+                color: Colors.grey.shade200
+              ),
+              child: ListTile(
+                leading: Icon(Icons.map, color: Colors.grey),
+                title: Text("Code \$10 off on shipping fee", style: theme.textTheme.bodyText2,),
+                subtitle: Text("10/03/2020", style: theme.textTheme.subtitle2.copyWith(color: Colors.grey.shade700),),
+              ),
             ),
           )
         ],
