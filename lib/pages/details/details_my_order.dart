@@ -34,7 +34,7 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Deliver to", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
-                    Text("Edit", style: theme.textTheme.subtitle1.copyWith(color: primaryColor),),
+                    Text("Edit", style: theme.textTheme.subtitle2.copyWith(color: primaryColor),),
                   ],
                 ),
               ),
@@ -94,7 +94,7 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
                     child: Text('Enter code', style: theme.textTheme.subtitle2.copyWith(color: blueColor),)
                   ),
                   onTap: () {
-
+                    Navigator.pushNamed(context, "/detailsAddPromotionCode");
                   },
                 )
               ),
@@ -107,7 +107,9 @@ class _DetailsMyOrderState extends State<DetailsMyOrder> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Payment Method", style: theme.textTheme.bodyText1.copyWith(color: Colors.black),),
-                        Text("Change", style: theme.textTheme.bodyText1.copyWith(color: primaryColor),),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, "/detailsChangePayment"),
+                            child: Text("Change", style: theme.textTheme.subtitle2.copyWith(color: primaryColor),)),
                       ],
                     ),
                   ),
