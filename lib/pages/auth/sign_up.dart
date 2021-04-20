@@ -11,7 +11,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String usernameString = "Username";
-  String emailString = "Emai";
+  String emailString = "Email";
   String passwordString = "Password";
   @override
   Widget build(BuildContext context) {
@@ -58,9 +58,7 @@ class _SignUpState extends State<SignUp> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(getProportionateScreenWidth(15))),
                     padding: EdgeInsets.symmetric(vertical: 11),
                     textStyle: theme.textTheme.headline5),
-                onPressed: () {
-                  Navigator.pushNamed(context, "/confirmPassword");
-                },
+                onPressed: () => Navigator.pushNamed(context, "/nav"),
               ),
             ),
           ],
