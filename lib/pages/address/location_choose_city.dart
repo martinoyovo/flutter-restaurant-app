@@ -49,6 +49,7 @@ class _LocationChooseCityState extends State<LocationChooseCity> {
                         child: Column(
                           children: [
                             ListTile(
+                              onTap:() => Navigator.pushNamed(context, "/locationAddress"),
                               title: Text("Edinburgh", style: theme.textTheme.bodyText1),
                               subtitle: Text("200 stores", style: theme.textTheme.subtitle1.copyWith(color: Colors.grey.shade700)),
                               trailing: (index % 2== 0) ?Icon(Icons.check_rounded, color: theme.primaryColor):SizedBox(),
