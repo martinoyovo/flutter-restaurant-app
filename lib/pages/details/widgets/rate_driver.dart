@@ -24,14 +24,15 @@ class _RateDriverState extends State<RateDriver> {
   Widget build(BuildContext context) {
     final theme = FClass().getFTheme(context);
     final size = FClass().getFSize(context);
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15), horizontal: getProportionateScreenWidth(20)),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
-            color: Colors.white
-        ),
-        child: Column(
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15), horizontal: getProportionateScreenWidth(20)),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(getProportionateScreenWidth(20)),
+          color: Colors.white
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
