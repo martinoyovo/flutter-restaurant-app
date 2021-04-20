@@ -103,12 +103,7 @@ class _SearchState extends State<Search> {
                         //_iselected =! _iselected;
                         _selectedItem = item;
                       });
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                            return SearchFilter(item: item);
-                          }
-                        )
-                      );
+                      Navigator.pushNamed(context, "/searchItems");
                     },
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 300),

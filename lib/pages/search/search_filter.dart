@@ -187,7 +187,7 @@ class _SearchFilterState extends State<SearchFilter> {
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(20),
             bottom: getProportionateScreenWidth(20),
-            child: FElevatedButton(context, () {}, "Confirm"),
+            child: FElevatedButton(context, () {Navigator.pop(context);}, "Confirm"),
           )
         ],
       ),
