@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:food_mobile/pages/search/search_filter.dart';
 import 'package:food_mobile/widgets/top_rated.dart';
 
 class SearchItems extends StatefulWidget {
@@ -46,12 +47,19 @@ class _SearchItemsState extends State<SearchItems> {
             ],
           ),
           actions: [
-            IconButton(icon: Icon(Icons.filter_list_rounded), onPressed: () {})
+            IconButton(icon: Icon(Icons.filter_list_rounded), onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return SearchFilter(item: "Bubble Tea");
+                  }
+              )
+              );
+            })
           ],
         ),
         body: TabBarView(
           children: [
-            TopRated(),
+            TopRated(callback: () {Navigator.pushNamed(context, "/detailsInfos");},),
             Center(
               child: Text("Menu"),
             ),
