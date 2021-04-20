@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/pages/driver/order/tracking.dart';
-import 'package:food_mobile/pages/profile/main_screen.dart';
+import 'package:food_mobile/pages/home.dart';
+import 'package:food_mobile/pages/profile/profile_screen.dart';
 import 'package:food_mobile/pages/saved/main_screen.dart';
 
 
@@ -18,7 +19,7 @@ class _FBottomNavigationBarState extends State<FBottomNavigationBar> {
   static const TextStyle _unselectedLabelStyle =
   TextStyle(color: Colors.grey);
   List<Widget> _widgetOptions = <Widget>[
-    Text("Home"),
+    Home(),
     Tracking(),
     MainScreen(),
     ProfileScreen(),
