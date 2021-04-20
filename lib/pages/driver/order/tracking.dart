@@ -19,21 +19,27 @@ class _TrackingState extends State<Tracking> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          bottom: TabBar(
-            indicatorWeight: 2,
-            indicatorColor: theme.primaryColor,
-            tabs: [
-              Tab(text: "Ongoing",),
-              Tab(text: "History",),
-            ],
-          ),
-        ),
-        body: TabBarView(
+        body: Column(
           children: [
-            FOngoingTracking(),
-            FHistoryTracking(),
+            Container(
+              margin: EdgeInsets.only(top: getProportionateScreenWidth(40)),
+              child: TabBar(
+                indicatorWeight: 2,
+                indicatorColor: theme.primaryColor,
+                tabs: [
+                  Tab(text: "Ongoing",),
+                  Tab(text: "History",),
+                ],
+              ),
+            ),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  FOngoingTracking(),
+                  FHistoryTracking(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
