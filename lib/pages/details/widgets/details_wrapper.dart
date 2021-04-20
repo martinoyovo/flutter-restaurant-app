@@ -69,14 +69,16 @@ class _DetailsWrapperState extends State<DetailsWrapper> with SingleTickerProvid
                 controller: _tabController,
                 indicatorSize: TabBarIndicatorSize.tab,
               ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    DeliveryTab(),
-                    ReviewTab(),
-                    InfoTab()
-                  ],
-                  controller: _tabController,
+              Container(
+                child: Expanded(
+                  child: TabBarView(
+                    children: [
+                      DeliveryTab(),
+                      ReviewTab(),
+                      InfoTab()
+                    ],
+                    controller: _tabController,
+                  ),
                 ),
               ),
             ],
