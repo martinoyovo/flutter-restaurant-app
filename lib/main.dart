@@ -13,6 +13,7 @@ import 'package:food_mobile/pages/details/details_add_promotion_code.dart';
 import 'package:food_mobile/pages/details/details_change_payment.dart';
 import 'package:food_mobile/pages/details/details_infos.dart';
 import 'package:food_mobile/pages/details/details_my_order.dart';
+import 'package:food_mobile/pages/details/details_my_order2.dart';
 import 'package:food_mobile/pages/details/details_search_in_restaurant.dart';
 import 'package:food_mobile/pages/driver/order/message/order_message.dart';
 import 'package:food_mobile/pages/driver/order/order_details.dart';
@@ -22,7 +23,7 @@ import 'package:food_mobile/pages/driver/widgets/f_bottom_navigation.dart';
 import 'package:food_mobile/pages/home.dart';
 import 'package:food_mobile/pages/onboarding.dart';
 import 'package:food_mobile/pages/profile/edit_profile.dart';
-import 'package:food_mobile/pages/profile/main_screen.dart';
+import 'package:food_mobile/pages/profile/profile_screen.dart';
 import 'package:food_mobile/pages/saved/see_all.dart';
 import 'package:food_mobile/pages/search/search_in_restaurant.dart';
 import 'package:food_mobile/root.dart';
@@ -78,7 +79,7 @@ class MyApp extends StatelessWidget {
           accentColor: primaryColor
         ),
         debugShowCheckedModeBanner: false,
-          initialRoute: '/root',
+          initialRoute: '/',
           routes: {
             "/home": (context) => Home(),
             "/root": (context) => Root(),
@@ -103,12 +104,13 @@ class MyApp extends StatelessWidget {
 
             "/detailsInfos": (context) => DetailsInfos(),
             "/detailsMyOrder": (context) => DetailsMyOrder(),
+            "/detailsMyOrder2": (context) => DetailsMyOrder2(),
             "/detailsChangePayment": (context) => DetailsChangePayment(),
             "/detailsAddPromotionCode": (context) => DetailsAddPromotionCode(),
 
             "/orderMessage": (context) => OrderMessage(),
             "/orderDetails": (context) => OrderDetails(),
-            "/trackerOrder": (context) => TrackOrder(),
+            "/trackOrder": (context) => TrackOrder(),
             "/tracking": (context) => Tracking(),
             "/driver": (context) => FBottomNavigationBar(),
 
@@ -116,6 +118,8 @@ class MyApp extends StatelessWidget {
 
             "/profileScreen": (context) => ProfileScreen(),
             "/editProfile": (context) => EditProfile(),
+
+            "/nav": (context) => FBottomNavigationBar(),
           },
       ),
     );
