@@ -1,0 +1,1 @@
+List categories = ["Seafood", "American", "Burgers", "Dessert"];
