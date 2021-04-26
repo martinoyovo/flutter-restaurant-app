@@ -3,11 +3,11 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 
-Widget FHomeSlider({BuildContext context, Map<String, String> list}) {
+Widget ItemInfos({BuildContext context, Map<String, dynamic> item}) {
   final theme = FClass().getFTheme(context);
   final size = FClass().getFSize(context);
   return SizedBox(
-    height: getProportionateScreenHeight(170),
+    height: getProportionateScreenHeight(160),
     child: Container(
         margin: EdgeInsets.fromLTRB(getProportionateScreenWidth(15),0,getProportionateScreenWidth(15),getProportionateScreenWidth(10),),
         padding: EdgeInsets.all(getProportionateScreenWidth(10)),
@@ -26,8 +26,9 @@ Widget FHomeSlider({BuildContext context, Map<String, String> list}) {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(list["titre"], style: theme.textTheme.headline5),
-              Text(list["soutitre"], style: theme.textTheme.bodyText1.copyWith(color: Colors.grey)),
+              Text(item["title"], style: theme.textTheme.headline5),
+              SizedBox(height: getProportionateScreenHeight(5),),
+              Text(item["address"], style: theme.textTheme.bodyText1.copyWith(color: Colors.grey)),
               Divider(thickness: 0.5, color: Colors.grey),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,13 +36,13 @@ Widget FHomeSlider({BuildContext context, Map<String, String> list}) {
                     Row(
                         children: [
                           Icon(Icons.star_rounded, color: Colors.yellow),
-                          Text(list["review"], style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                          Text("${item["rate"]}", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
                         ]
                     ),
                     Row(
                         children: [
                           Icon(Icons.alarm_rounded, color: blueColor),
-                          Text(list["status"], style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                          Text("${item["time"]} mins", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
                         ]
                     ),
                     Row(
@@ -55,7 +56,7 @@ Widget FHomeSlider({BuildContext context, Map<String, String> list}) {
                                 color: blueColor
                             ),
                           ),
-                          Text("Free", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
+                          Text("${item["status"]}", style: theme.textTheme.subtitle1.copyWith(color: blueColor))
                         ]
                     ),
                   ]
