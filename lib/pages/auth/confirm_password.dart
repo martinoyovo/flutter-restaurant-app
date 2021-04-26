@@ -42,7 +42,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
             ),
             SizedBox(height: getProportionateScreenWidth(10),),
             TextFormField(
-                decoration: fInputDecoration(emailString, theme)
+                decoration: fInputDecoration(emailString, theme, null)
             ),
             SizedBox(height: getProportionateScreenWidth(15),),
             Container(
