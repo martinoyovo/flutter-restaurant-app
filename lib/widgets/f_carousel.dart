@@ -8,8 +8,9 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/fake_datas/header_list.dart';
+import 'package:food_mobile/pages/restaurant_details.dart';
 import 'package:food_mobile/widgets/f_elevated_button.dart';
-import 'package:food_mobile/widgets/f_home_slider.dart';
+import 'package:food_mobile/widgets/f_item_infos.dart';
 import 'package:food_mobile/widgets/f_loader.dart';
 import 'package:food_mobile/widgets/f_network_image.dart';
 import 'package:food_mobile/widgets/svg_image.dart';
@@ -50,23 +51,29 @@ class _FCarouselState extends State<FCarousel> {
               physics: BouncingScrollPhysics(),
               itemCount: headerList.length,
               itemBuilder: (context, index) {
-                return Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(5)),
-                      child: FNetworkImage(
-                        height: height/1.50,
-                        width: double.infinity,
-                        radius: getProportionateScreenWidth(20),
-                        imageUrl: headerList[index]["image"],
+                return InkWell(
+                  onTap: () => Navigator.push(
+                    context, MaterialPageRoute(
+                      builder: (context) => RestaurantDetails(details: headerList[index]))
+                  ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(5)),
+                        child: FNetworkImage(
+                          height: height/1.50,
+                          width: double.infinity,
+                          radius: getProportionateScreenWidth(20),
+                          imageUrl: headerList[index]["url"],
+                        ),
                       ),
-                    ),
-                    Container(
-                      //margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(5)),
-                        alignment: Alignment.bottomCenter,
-                        child: FHomeSlider(context: context, list: headerList[index])
-                    ),
-                  ],
+                      Container(
+                        //margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(5)),
+                          alignment: Alignment.bottomCenter,
+                          child: ItemInfos(context: context, item: headerList[index])
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
