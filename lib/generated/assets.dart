@@ -9,6 +9,7 @@ class Assets {
   static const String iconsFacebook = 'assets/icons/facebook.svg';
   static const String iconsGoogle = 'assets/icons/google.png';
   static const String iconsMastercard = 'assets/icons/mastercard.svg';
+  static const String iconsPicture = 'assets/icons/picture.png';
   static const String iconsSeafood = 'assets/icons/seafood.svg';
   static const String iconsValidate = 'assets/icons/validate.svg';
   static const String imgsOnboarding1 = 'assets/imgs/onboarding_1.svg';
