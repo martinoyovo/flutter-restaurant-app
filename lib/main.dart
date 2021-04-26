@@ -19,7 +19,7 @@ import 'package:food_mobile/pages/driver/order/message/order_message.dart';
 import 'package:food_mobile/pages/driver/order/order_details.dart';
 import 'package:food_mobile/pages/driver/order/track_order.dart';
 import 'package:food_mobile/pages/driver/order/tracking.dart';
-import 'package:food_mobile/pages/driver/widgets/f_bottom_navigation.dart';
+import 'file:///C:/Users/tino.co/Documents/food_mobile/lib/widgets/f_bottom_navigation.dart';
 import 'package:food_mobile/pages/home.dart';
 import 'package:food_mobile/pages/onboarding.dart';
 import 'package:food_mobile/pages/profile/edit_profile.dart';
@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           inputDecorationTheme: InputDecorationTheme(
             labelStyle: GoogleFonts.openSans(fontSize: 16),
+            errorStyle: GoogleFonts.openSans(fontSize: 13),
           ),
           textTheme: TextTheme(
             headline6: GoogleFonts.openSans(fontSize: 21, fontWeight: FontWeight.w600),
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
             unselectedLabelStyle: GoogleFonts.openSans(fontSize: 16, color: Colors.grey.shade700),
           ),
           primaryColor: primaryColor,
-          accentColor: primaryColor
+          accentColor: Colors.white
         ),
         debugShowCheckedModeBanner: false,
           initialRoute: '/',
