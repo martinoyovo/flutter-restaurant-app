@@ -5,7 +5,7 @@ import 'package:food_mobile/widgets/f_loader.dart';
 Widget FNetworkImage({double height, double width, double radius, String imageUrl}) {
   Widget fLoader = FLoader(
       height: height,
-      width: double.infinity,
+      width: width,
       radius: radius
   );
   return ClipRRect(
