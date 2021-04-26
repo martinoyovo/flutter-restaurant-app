@@ -17,50 +17,54 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(25)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              padding: EdgeInsets.only(bottom: getProportionateScreenWidth(30)),
-                child: Text("Sign In", style: theme.textTheme.headline6,)
-            ),
-            TextField(
-              decoration: fInputDecoration(usernameString, theme)
-            ),
-            SizedBox(height: getProportionateScreenWidth(15),),
-            TextField(
-              decoration: fInputDecoration(passwordString, theme)
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                InkWell(
-                  child: Text("Forgot password?", style: theme.textTheme.bodyText1,),
-                  onTap: () => Navigator.pushNamed(context, "/confirmPassword"),
-                ),
-              ],
-            ),
-            SigninButtons(theme),
-            SizedBox(height: getProportionateScreenWidth(20),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Don't you have an account?", style: theme.textTheme.subtitle1,),
-                InkWell(
-                  child: Text(" Sign up now!", style: theme.textTheme.subtitle1.copyWith(color: primaryColor),),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/signUp');
-                  },
-                ),
-              ],
-            )
-        ],
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.only(bottom: getProportionateScreenWidth(30), top: size.height*0.11),
+                  child: Text("Sign In", style: theme.textTheme.headline6,)
+              ),
+              TextField(
+                decoration: fInputDecoration(usernameString, theme, null)
+              ),
+              SizedBox(height: getProportionateScreenWidth(15),),
+              TextField(
+                decoration: fInputDecoration(passwordString, theme, null)
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                    child: Text("Forgot password?", style: theme.textTheme.bodyText1,),
+                    onTap: () => Navigator.pushNamed(context, "/confirmPassword"),
+                  ),
+                ],
+              ),
+              SigninButtons(theme),
+              SizedBox(height: getProportionateScreenWidth(20),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't you have an account?", style: theme.textTheme.subtitle1,),
+                  InkWell(
+                    child: Text(" Sign up now!", style: theme.textTheme.subtitle1.copyWith(color: primaryColor),),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/signUp');
+                    },
+                  ),
+                ],
+              ),
+          ],
       ),
+        ),
       ),
     );
   }
