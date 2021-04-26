@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/pages/driver/order/tracking.dart';
 import 'package:food_mobile/pages/home.dart';
+import 'package:food_mobile/pages/home_snd.dart';
 import 'package:food_mobile/pages/profile/profile_screen.dart';
 import 'package:food_mobile/pages/saved/main_screen.dart';
+import 'package:food_mobile/widgets/f_carousel.dart';
 
 
 /// This is the stateful widget that the main application instantiates.
@@ -19,7 +21,7 @@ class _FBottomNavigationBarState extends State<FBottomNavigationBar> {
   static const TextStyle _unselectedLabelStyle =
   TextStyle(color: Colors.grey);
   List<Widget> _widgetOptions = <Widget>[
-    Home(),
+    HomeSnd(),
     Tracking(),
     MainScreen(),
     ProfileScreen(),
