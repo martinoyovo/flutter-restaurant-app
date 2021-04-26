@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/pages/details/widgets/details_wrapper.dart';
-import 'package:food_mobile/pages/details/widgets/info_tab.dart';
-import 'package:food_mobile/pages/search/search_items.dart';
-import 'package:food_mobile/widgets/f_app_bar.dart';
-import 'package:food_mobile/widgets/f_home_slider.dart';
 import 'package:geolocator/geolocator.dart';
 
 class DetailsSearchInRestaurant extends StatefulWidget {

@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/pages/details/widgets/delivery_tab.dart';
 import 'package:food_mobile/pages/details/widgets/review_tab.dart';
 import 'package:food_mobile/pages/details/widgets/info_tab.dart';
-import 'package:food_mobile/pages/search/search_items.dart';
-import 'package:food_mobile/widgets/f_app_bar.dart';
-import 'package:food_mobile/widgets/f_home_slider.dart';
-import 'package:geolocator/geolocator.dart';
 
 class DetailsWrapper extends StatefulWidget {
   final Widget detailsWidget;
@@ -40,14 +34,14 @@ class _DetailsWrapperState extends State<DetailsWrapper> with SingleTickerProvid
       body: Stack(
         children: [
           widget.detailsWidget,
-          Positioned(
+          /*Positioned(
             top: size.height*0.31,
             right: 0,
             left: 0,
             child: Container(
                 child: FHomeSlider(context)
             ),
-          ),
+          ),*/
           Column(
             children: [
               SizedBox(
