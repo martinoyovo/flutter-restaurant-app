@@ -5,9 +5,11 @@ import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/fake_datas/categories_list.dart';
 import 'package:food_mobile/fake_datas/promotion_list.dart';
 import 'package:food_mobile/fake_datas/restaurant_list.dart';
+import 'package:food_mobile/pages/restaurant_details.dart';
 import 'package:food_mobile/widgets/f_carousel.dart';
 import 'package:food_mobile/widgets/f_network_image.dart';
 import 'package:food_mobile/widgets/f_rounded_categories.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeSnd extends StatefulWidget {
@@ -18,19 +20,19 @@ class HomeSnd extends StatefulWidget {
 }
 
 class _HomeSndState extends State<HomeSnd> {
-  ScrollController _listController;
   @override
   Widget build(BuildContext context) {
     final theme = FClass().getFTheme(context);
     final size = FClass().getFSize(context);
     return Scaffold(
       appBar: AppBar(
-        shape: RoundedRectangleBorder(
+        automaticallyImplyLeading: false,
+        /*shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(getProportionateScreenWidth(10)),
             bottomRight: Radius.circular(getProportionateScreenWidth(10)),
           )
-        ),
+        ),*/
         backgroundColor: primaryColor,
         iconTheme: IconThemeData(
           color: Colors.white
@@ -58,7 +60,7 @@ class _HomeSndState extends State<HomeSnd> {
                   vertical: getProportionateScreenWidth(10),
                   horizontal: getProportionateScreenWidth(15)),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+                borderRadius: BorderRadius.circular(getProportionateScreenWidth(100)),
                 color: Colors.white,
               ),
               child: TextField(
@@ -74,12 +76,12 @@ class _HomeSndState extends State<HomeSnd> {
         ),
       ),
       body: ListView.builder(
-          controller: _listController,
-          shrinkWrap: true,
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           padding: EdgeInsets.all(getProportionateScreenWidth(15)),
           physics: BouncingScrollPhysics(),
           itemCount:  restaurantList.length,
           itemBuilder: (context, int index) {
+            var restaurantItem = restaurantList[index];
             if(index == 0) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,10 +171,13 @@ class _HomeSndState extends State<HomeSnd> {
                 ],
               );
             }
-            var restaurantItem = restaurantList[index];
             return Container(
               margin: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(7)),
               child: GestureDetector(
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context) => RestaurantDetails(details: restaurantItem))
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
