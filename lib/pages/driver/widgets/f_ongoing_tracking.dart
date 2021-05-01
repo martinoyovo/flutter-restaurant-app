@@ -4,6 +4,10 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_dialogs.dart';
+import 'package:food_mobile/widgets/f_loader.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
 
 class FOngoingTracking extends StatefulWidget {
   FOngoingTracking({Key key}) : super(key: key);
@@ -13,15 +17,35 @@ class FOngoingTracking extends StatefulWidget {
 }
 
 class _FOngoingTrackingState extends State<FOngoingTracking> {
+  GoogleMapController mapController;
   @override
   Widget build(BuildContext context) {
+    final Position currentPosition = Provider.of<Position>(context);
     final theme = FClass().getFTheme(context);
-    return Stack(
+    return currentPosition ==null
+        ? FLoader(height: double.infinity, width: double.infinity, radius: 0)
+        : Stack(
       children: [
-        Container(
+        GoogleMap(
+          onMapCreated: _onMapCreated,
+          myLocationEnabled: true,
+          compassEnabled: false,
+          mapToolbarEnabled: false,
+          myLocationButtonEnabled: false,
+          zoomControlsEnabled: false,
+          zoomGesturesEnabled: true,
+          scrollGesturesEnabled: true,
+          tiltGesturesEnabled: true,
+          //markers: Set<Marker>.of(markers.values),
+          initialCameraPosition: CameraPosition(
+            target: LatLng(currentPosition.latitude, currentPosition.longitude),
+            zoom: 17,
+          ),
+        ),
+        /*Container(
           margin: EdgeInsets.only(top: getProportionateScreenWidth(20)),
           color: primaryColor,
-        ),
+        ),*/
         Positioned(
           right: getProportionateScreenWidth(20),
           left: getProportionateScreenWidth(20),
@@ -74,6 +98,10 @@ class _FOngoingTrackingState extends State<FOngoingTracking> {
         )
       ],
     );
+  }
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
   }
 }
 
