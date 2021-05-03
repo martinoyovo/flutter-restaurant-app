@@ -3,6 +3,7 @@ import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/fake_datas/categories_list.dart';
+import 'package:food_mobile/fake_datas/plates_promotion_list.dart';
 import 'package:food_mobile/fake_datas/promotion_list.dart';
 import 'package:food_mobile/fake_datas/restaurant_list.dart';
 import 'package:food_mobile/pages/restaurant_details.dart';
@@ -124,8 +125,8 @@ class _HomeSndState extends State<HomeSnd> {
                     physics: BouncingScrollPhysics(),
                     child: Row(
                       children:
-                      List<Widget>.generate(promotionList.length, (i) {
-                        var list = promotionList[i];
+                      List<Widget>.generate(platesPromotionList.length, (i) {
+                        var list = platesPromotionList[i];
                         return Container(
                           width: 2*size.width/3,
                           height: getProportionateScreenHeight(140),
@@ -151,7 +152,7 @@ class _HomeSndState extends State<HomeSnd> {
                                   horizontal: getProportionateScreenWidth(10),
                                 ),
                                 decoration: BoxDecoration(
-                                  color: list["isHightlighted"]==true?primaryColor:Colors.transparent
+                                  color: list["isHighlighted"]==true?primaryColor:Colors.transparent
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/fake_datas/plat_photo_list.dart';
+import 'package:food_mobile/fake_datas/photo_list.dart';
 import 'package:food_mobile/widgets/photo_videos.dart';
 
 class ReviewTab extends StatefulWidget {

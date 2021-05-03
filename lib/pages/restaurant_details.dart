@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/colors.dart';
 import 'package:food_mobile/core/utils/f_class.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/fake_datas/plat_photo_list.dart';
+import 'package:food_mobile/fake_datas/photo_list.dart';
 import 'package:food_mobile/pages/details/grouped_views/menu_list.dart';
 import 'package:food_mobile/pages/details/grouped_views/review_list.dart';
 import 'package:food_mobile/pages/details/widgets/delivery_tab.dart';
@@ -59,27 +59,43 @@ class _RestaurantDetailsState extends State<RestaurantDetails> with SingleTicker
     return Scaffold(
       body: Column(
         children: [
-          AnimatedContainer(
-            duration: Duration(milliseconds: 300),
-            child: _isShown?
-            Container(
-              height: size.height*0.3,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(widget.details["url"]),
-                    fit: BoxFit.cover,
-                  )
+          _isShown?
+          Container(
+            height: size.height*0.3,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(widget.details["url"]),
+                  fit: BoxFit.cover,
+                )
+            ),
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              iconTheme: IconThemeData(
+                  color: Colors.white
               ),
-              child: AppBar(
-                automaticallyImplyLeading: false,
-                iconTheme: IconThemeData(
-                    color: Colors.white
+              elevation: 0,
+              leading: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  margin: EdgeInsets.all(getProportionateScreenWidth(10)),
+                  height: getProportionateScreenWidth(36),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white),
+                  padding: EdgeInsets.all(getProportionateScreenWidth(6)),
+                  alignment: Alignment.center,
+                  child: Align(
+                      alignment: Alignment.center,
+                      child: Icon(
+                          Icons.arrow_back,
+                          color: Colors.grey.shade600
+                      )),
                 ),
-                elevation: 0,
-                leading: InkWell(
-                  onTap: () => Navigator.pop(context),
+              ),
+              actions: [
+                InkWell(
                   child: Container(
-                    margin: EdgeInsets.all(getProportionateScreenWidth(10)),
+                    margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
                     height: getProportionateScreenWidth(36),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
@@ -89,54 +105,35 @@ class _RestaurantDetailsState extends State<RestaurantDetails> with SingleTicker
                     child: Align(
                         alignment: Alignment.center,
                         child: Icon(
-                            Icons.arrow_back,
-                            color: Colors.grey.shade600
+                          Icons.favorite,
+                          color: primaryColor,
                         )),
                   ),
                 ),
-                actions: [
-                  InkWell(
-                    child: Container(
-                      margin: EdgeInsets.only(right: getProportionateScreenWidth(7)),
-                      height: getProportionateScreenWidth(36),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white),
-                      padding: EdgeInsets.all(getProportionateScreenWidth(6)),
-                      alignment: Alignment.center,
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Icon(
-                            Icons.favorite,
-                            color: primaryColor,
-                          )),
-                    ),
+                InkWell(
+                  child: Container(
+                    margin:
+                    EdgeInsets.only(right: getProportionateScreenWidth(15)),
+                    height: getProportionateScreenWidth(36),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white),
+                    padding: EdgeInsets.all(getProportionateScreenWidth(6)),
+                    alignment: Alignment.center,
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: Icon(
+                          Icons.search_rounded,
+                          color: Colors.grey.shade600,
+                        )),
                   ),
-                  InkWell(
-                    child: Container(
-                      margin:
-                      EdgeInsets.only(right: getProportionateScreenWidth(15)),
-                      height: getProportionateScreenWidth(36),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white),
-                      padding: EdgeInsets.all(getProportionateScreenWidth(6)),
-                      alignment: Alignment.center,
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Icon(
-                            Icons.search_rounded,
-                            color: Colors.grey.shade600,
-                          )),
-                    ),
-                  ),
-                ],
-                //title: Text("Food Mobile", style: theme.textTheme.headline5.copyWith(color: Colors.black),),
-              ),
-            ):
-            AppBar(
-              title: Text(widget.details["title"], style: theme.textTheme.headline5.copyWith(color: Colors.black))
+                ),
+              ],
+              //title: Text("Food Mobile", style: theme.textTheme.headline5.copyWith(color: Colors.black),),
             ),
+          ):
+          AppBar(
+              title: Text(widget.details["title"], style: theme.textTheme.headline5.copyWith(color: Colors.black))
           ),
           TabBar(
             indicatorColor: theme.primaryColor,

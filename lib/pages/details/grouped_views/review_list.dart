@@ -32,12 +32,12 @@ class _ReviewListState extends State<ReviewList> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: getProportionateScreenWidth(80),
-                    width: getProportionateScreenWidth(80),
+                    height: getProportionateScreenWidth(70),
+                    width: getProportionateScreenWidth(70),
                     child: FNetworkImage(
                         imageUrl: "https://images.unsplash.com/photo-1617467191821-f7f65e876501?ixid=MnwyMjU3NDh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTk2OTA1NzM&ixlib=rb-1.2.1",
-                        height: getProportionateScreenWidth(80),
-                        width: getProportionateScreenWidth(80),
+                        height: getProportionateScreenWidth(70),
+                        width: getProportionateScreenWidth(70),
                         radius: getProportionateScreenWidth(10)
                     ),
                   ),

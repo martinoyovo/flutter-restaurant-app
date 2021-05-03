@@ -7,7 +7,7 @@ List<Map<String, dynamic>> promotionList = [
     "address": "189 Giang Vo",
     "time": 5,
     "distance": 250,
-    "status": ""
+    "status": "",
   },
   {
     "url": "https://images.unsplash.com/photo-1619222232983-e7fa9e740068?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMjU3NDh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTkzNDc0OTc&ixlib=rb-1.2.1&q=80&w=400",
