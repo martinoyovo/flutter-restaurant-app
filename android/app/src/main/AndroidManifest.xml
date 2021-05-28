@@ -12,7 +12,7 @@
         android:label="food_mobile"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBD_RyUnEQnS0ctGKTu1gOXwtLAFRkn-zU"/>
+            android:value="XXX"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
