@@ -1,6 +1,4 @@
-# food_mobile
-
-Food mobile.
+# Restaurant App
 
 ## Getting Started
 

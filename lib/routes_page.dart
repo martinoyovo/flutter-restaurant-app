@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_mobile/core/utils/size_config.dart';
 import 'package:food_mobile/widgets/f_elevated_button.dart';
 
-class Root extends StatelessWidget {
+class RoutesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

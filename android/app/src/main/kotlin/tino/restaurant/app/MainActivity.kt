@@ -1,4 +1,4 @@
-package food.noorazi.food_mobile
+package tino.restaurant.app
 
 import io.flutter.embedding.android.FlutterActivity
 
