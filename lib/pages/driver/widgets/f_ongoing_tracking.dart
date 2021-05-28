@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/widgets/f_dialogs.dart';
-import 'package:food_mobile/widgets/f_loader.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/widgets/f_dialogs.dart';
+import 'package:restaurant_app/widgets/f_loader.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';

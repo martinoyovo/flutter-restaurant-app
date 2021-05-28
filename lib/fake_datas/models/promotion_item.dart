@@ -1,4 +1,4 @@
-import 'package:food_mobile/fake_datas/promotion_list.dart';
+import 'package:restaurant_app/fake_datas/promotion_list.dart';
 
 class PromotionItem {
   String url;

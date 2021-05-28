@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/pages/details/widgets/rate_driver.dart';
-import 'package:food_mobile/widgets/f_app_bar.dart';
-import 'package:food_mobile/widgets/f_divider.dart';
-import 'package:food_mobile/widgets/f_elevated_button.dart';
-import 'package:food_mobile/widgets/f_dialogs.dart';
-import 'package:food_mobile/widgets/svg_image.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/pages/details/widgets/rate_driver.dart';
+import 'package:restaurant_app/widgets/f_app_bar.dart';
+import 'package:restaurant_app/widgets/f_divider.dart';
+import 'package:restaurant_app/widgets/f_elevated_button.dart';
+import 'package:restaurant_app/widgets/f_dialogs.dart';
+import 'package:restaurant_app/widgets/svg_image.dart';
 
 class OrderDetails extends StatefulWidget {
   OrderDetails({Key key}) : super(key: key);

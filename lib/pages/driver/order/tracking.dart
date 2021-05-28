@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/pages/driver/widgets/f_history_tracking.dart';
-import 'package:food_mobile/pages/driver/widgets/f_ongoing_tracking.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/pages/driver/widgets/f_history_tracking.dart';
+import 'package:restaurant_app/pages/driver/widgets/f_ongoing_tracking.dart';
 
 class Tracking extends StatefulWidget {
   Tracking({Key key}) : super(key: key);

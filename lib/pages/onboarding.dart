@@ -2,11 +2,10 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/widgets/f_elevated_button.dart';
-import 'package:food_mobile/widgets/svg_image.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/widgets/f_elevated_button.dart';
+import 'package:restaurant_app/widgets/svg_image.dart';
 
 class Onboarding extends StatefulWidget {
   @override

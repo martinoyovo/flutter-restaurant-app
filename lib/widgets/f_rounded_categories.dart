@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/widgets/svg_image.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/widgets/svg_image.dart';
 
 Widget FRoundedCategories(String svgPath) {
   return Container(

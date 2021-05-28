@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/widgets/f_elevated_button.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/widgets/f_elevated_button.dart';
 
 class RoutesPage extends StatelessWidget {
   @override

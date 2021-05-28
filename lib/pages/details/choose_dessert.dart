@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/pages/details/details_infos.dart';
-import 'package:food_mobile/widgets/top_rated.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/pages/details/details_infos.dart';
+import 'package:restaurant_app/widgets/top_rated.dart';
 
 class ChooseDessert extends StatefulWidget {
   ChooseDessert({Key key}) : super(key: key);

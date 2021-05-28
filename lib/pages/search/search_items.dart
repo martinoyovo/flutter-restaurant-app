@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/pages/search/search_filter.dart';
-import 'package:food_mobile/widgets/top_rated.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/pages/search/search_filter.dart';
+import 'package:restaurant_app/widgets/top_rated.dart';
 
 class SearchItems extends StatefulWidget {
   SearchItems({Key key}) : super(key: key);

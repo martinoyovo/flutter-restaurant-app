@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_location_service.dart';
-import 'package:food_mobile/core/utils/routes.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_location_service.dart';
+import 'package:restaurant_app/core/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

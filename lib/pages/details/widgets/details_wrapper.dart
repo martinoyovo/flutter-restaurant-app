@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/pages/details/widgets/delivery_tab.dart';
-import 'package:food_mobile/pages/details/widgets/review_tab.dart';
-import 'package:food_mobile/pages/details/widgets/info_tab.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/pages/details/widgets/delivery_tab.dart';
+import 'package:restaurant_app/pages/details/widgets/review_tab.dart';
+import 'package:restaurant_app/pages/details/widgets/info_tab.dart';
 
 class DetailsWrapper extends StatefulWidget {
   final Widget detailsWidget;

@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:food_mobile/widgets/f_loader.dart';
+import 'package:restaurant_app/widgets/f_loader.dart';
 
 Widget FNetworkImage({double height, double width, double radius, String imageUrl}) {
   Widget fLoader = FLoader(

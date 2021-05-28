@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/fake_datas/photo_list.dart';
-import 'package:food_mobile/widgets/photo_videos.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/fake_datas/photo_list.dart';
+import 'package:restaurant_app/widgets/photo_videos.dart';
 
 class ReviewTab extends StatefulWidget {
   ReviewTab({Key key}) : super(key: key);

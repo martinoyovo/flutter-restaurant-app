@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/fake_datas/categories_list.dart';
-import 'package:food_mobile/fake_datas/plates_promotion_list.dart';
-import 'package:food_mobile/fake_datas/promotion_list.dart';
-import 'package:food_mobile/fake_datas/restaurant_list.dart';
-import 'package:food_mobile/pages/restaurant_details.dart';
-import 'package:food_mobile/widgets/f_carousel.dart';
-import 'package:food_mobile/widgets/f_network_image.dart';
-import 'package:food_mobile/widgets/f_rounded_categories.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/fake_datas/categories_list.dart';
+import 'package:restaurant_app/fake_datas/plates_promotion_list.dart';
+import 'package:restaurant_app/fake_datas/promotion_list.dart';
+import 'package:restaurant_app/fake_datas/restaurant_list.dart';
+import 'package:restaurant_app/pages/restaurant_details.dart';
+import 'package:restaurant_app/widgets/f_carousel.dart';
+import 'package:restaurant_app/widgets/f_network_image.dart';
+import 'package:restaurant_app/widgets/f_rounded_categories.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 

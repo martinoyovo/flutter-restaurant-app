@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 Widget FCustomDivider() => Padding(
   padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(10)),

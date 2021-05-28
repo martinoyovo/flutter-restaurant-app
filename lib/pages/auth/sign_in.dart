@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/core/utils/f_input_decoration.dart';
-import 'package:food_mobile/widgets/svg_image.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/core/utils/f_input_decoration.dart';
+import 'package:restaurant_app/widgets/svg_image.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key key}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:food_mobile/fake_datas/models/restaurant_menu.dart';
+import 'package:restaurant_app/fake_datas/models/restaurant_menu.dart';
 import 'package:sembast/sembast.dart';
 import 'package:path/path.dart';
 import 'package:sembast/sembast.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/pages/details/widgets/details_wrapper.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/pages/details/widgets/details_wrapper.dart';
 import 'package:geolocator/geolocator.dart';
 
 class DetailsSearchInRestaurant extends StatefulWidget {

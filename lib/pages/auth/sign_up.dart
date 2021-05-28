@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/core/utils/f_input_decoration.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/core/utils/f_input_decoration.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);

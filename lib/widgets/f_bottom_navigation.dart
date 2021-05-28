@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/pages/driver/order/tracking.dart';
-import 'package:food_mobile/pages/home.dart';
-import 'package:food_mobile/pages/home_snd.dart';
-import 'package:food_mobile/pages/profile/profile_screen.dart';
-import 'package:food_mobile/pages/saved/main_screen.dart';
-import 'package:food_mobile/widgets/f_carousel.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/pages/driver/order/tracking.dart';
+import 'package:restaurant_app/pages/home.dart';
+import 'package:restaurant_app/pages/home_snd.dart';
+import 'package:restaurant_app/pages/profile/profile_screen.dart';
+import 'package:restaurant_app/pages/saved/main_screen.dart';
+import 'package:restaurant_app/widgets/f_carousel.dart';
 
 
 /// This is the stateful widget that the main application instantiates.

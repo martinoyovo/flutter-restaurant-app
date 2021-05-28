@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_mobile/core/utils/colors.dart';
-import 'package:food_mobile/core/utils/f_class.dart';
-import 'package:food_mobile/core/utils/size_config.dart';
-import 'package:food_mobile/fake_datas/photo_list.dart';
-import 'package:food_mobile/pages/details/grouped_views/menu_list.dart';
-import 'package:food_mobile/pages/details/grouped_views/review_list.dart';
-import 'package:food_mobile/pages/details/widgets/delivery_tab.dart';
-import 'package:food_mobile/pages/details/widgets/info_tab.dart';
-import 'package:food_mobile/pages/details/widgets/review_tab.dart';
-import 'package:food_mobile/widgets/f_dialogs.dart';
-import 'package:food_mobile/widgets/f_item_infos.dart';
-import 'package:food_mobile/widgets/f_network_image.dart';
-import 'package:food_mobile/widgets/photo_videos.dart';
+import 'package:restaurant_app/core/utils/colors.dart';
+import 'package:restaurant_app/core/utils/f_class.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/fake_datas/photo_list.dart';
+import 'package:restaurant_app/pages/details/grouped_views/menu_list.dart';
+import 'package:restaurant_app/pages/details/grouped_views/review_list.dart';
+import 'package:restaurant_app/widgets/f_network_image.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class RestaurantDetails extends StatefulWidget {
