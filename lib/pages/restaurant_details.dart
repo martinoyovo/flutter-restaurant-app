@@ -136,10 +136,10 @@ class _RestaurantDetailsState extends State<RestaurantDetails> with SingleTicker
                 text: 'Menu',
               ),
               Tab(
-                text: 'Review',
+                text: 'Reviews',
               ),
               Tab(
-                text: 'Info',
+                text: 'Infos',
               ),
             ],
             controller: _tabController,
